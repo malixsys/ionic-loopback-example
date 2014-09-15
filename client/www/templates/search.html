@@ -3,6 +3,6 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon" ng-hide="$exposeAside.active"></button>
   </ion-nav-buttons>
   <ion-content class="has-header">
-    <h1>{{ currentUser.email }}</h1>
+    <h1>{{ currentUser ? (currentUser.anonymous ? 'guest' : currentUser.email) : '' }}</h1>
   </ion-content>
 </ion-view>

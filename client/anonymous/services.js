@@ -39,7 +39,7 @@ angular.module('app.services', ['lbServices', 'ngCookies'])
 
       ensureHasCurrentUser: function(cb) {
         var self = this;
-        if (!this.currentUser || this.currentUser.id === 'social') {
+        if ((!this.currentUser || this.currentUser.id === 'social') && $cookies.access_token) {
           LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
           $http.get('/auth/current')
             .then(function(response) {
