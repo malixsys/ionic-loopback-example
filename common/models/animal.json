@@ -1,0 +1,12 @@
+{
+  "name": "Animal",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "properties": {
+    "unique_id": {
+      "id": true,
+      "type": "string"
+    },
+    "species": "string"
+  }
+}

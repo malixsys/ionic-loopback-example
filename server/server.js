@@ -4,6 +4,12 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 var app = module.exports = loopback();
 
+app.use(function(req, res, next) {
+  res.setHeader('X-Powered-By', 'zoof');
+  res.removeHeader('Vary');
+  next();
+});
+
 // Passport configurators..
 var loopbackPassport = require('loopback-component-passport');
 var PassportConfigurator = loopbackPassport.PassportConfigurator;
@@ -102,11 +108,18 @@ app.start = function() {
   return app.listen(function() {
     app.emit('started');
     console.log('Web server listening at: %s', app.get('url'));
+
     app.models.user.create({
       email: 'foo@bar.com',
       password: '123456',
       name: {givenName: 'Joseph', familyName: 'Toblerone'}
     });
+
+    app.models.Animal.create({
+      species:'Dog'
+    })
+    //console.log(require('util').inspect(app.models.Animal, false, 0));
+
   });
 };
 

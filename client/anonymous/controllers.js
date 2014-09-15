@@ -2,13 +2,14 @@
 
 require('./services');
 
-angular.module('app.controllers', ['app.services', 'ngCookies'])
+angular.module('app.controllers', ['app.services', 'ngCookies', 'lbServices'])
 
-  .controller('AppCtrl', function($window, $scope, $ionicModal, $timeout, AppAuth, $cookies) {
+ .controller('AppCtrl', function($scope, $ionicModal, $timeout, AppAuth, Animal) {
     AppAuth.ensureHasCurrentUser(function(user) {
-      console.log(user && user.name);
       $scope.currentUser = (user && user.email) ? user : {anonymous: true};
     });
+
+    $scope.animals = Animal.find();
 
     // Form data for the login modal
     $scope.loginData = {
