@@ -2,6 +2,8 @@
   "name": "user",
   "plural": "users",
   "base": "User",
+  "properties": {},
+  "validations": [],
   "relations": {
     "accessTokens": {
       "type": "hasMany",
@@ -19,13 +21,12 @@
       "foreignKey": "userId"
     }
   },
-  "validations": [],
   "acls": [
     {
-      "accessType": "*",
-      "permission": "DENY",
       "principalType": "ROLE",
-      "principalId": "$everyone"
+      "principalId": "$everyone",
+      "permission": "DENY",
+      "accessType": "*"
     }
   ],
   "methods": []

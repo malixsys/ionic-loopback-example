@@ -51,7 +51,7 @@ gulp.task('nodemon', function() {
   plugins.nodemon({
     verbose: true,
     script: 'server/server.js',
-    ext: 'js coffee',
+    ext: 'js json',
     watch: ['server'],
     ignore: ['server/.DS_Store'],
     env: { 'NODE_ENV': 'development' }

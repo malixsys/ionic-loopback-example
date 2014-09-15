@@ -4,9 +4,19 @@
   "idInjection": false,
   "properties": {
     "unique_id": {
-      "id": true,
-      "type": "string"
-    },
-    "species": "string"
-  }
+      "type": "string",
+      "id": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "accessType": "*"
+    }
+  ],
+  "methods": []
 }
