@@ -5,9 +5,9 @@ angular.module('app.services', ['lbServices', 'ngCookies'])
     return {
       login: function(data, cb) {
         LoopBackAuth.currentUserId = LoopBackAuth.accessTokenId = null;
-        $http.post('/v1/api/users/login', {"email": data.email, "password": data.password})
+        $http.post('/v1/api/users/login?include=user', {"email": data.email, "password": data.password})
           .then(function(response) {
-            if (response.data.id) {
+            if (response.data && response.data.id) {
               LoopBackAuth.currentUserId = response.data.userId;
               LoopBackAuth.accessTokenId = response.data.id;
             }
@@ -16,14 +16,10 @@ angular.module('app.services', ['lbServices', 'ngCookies'])
               LoopBackAuth.accessTokenId = null;
             }
             LoopBackAuth.save();
-            if(LoopBackAuth.currentUserId) {
-              $http.get('/v1/api/users/' + LoopBackAuth.currentUserId).then(function(response) {
-                  self.currentUser = response.data;
-                  cb(self.currentUser);
-                }, function(){
-                  cb({});
-                }
-              );
+            if (LoopBackAuth.currentUserId && response.data && response.data.user) {
+              self.currentUser = response.data.user
+              cb(self.currentUser);
+
             } else {
               cb({});
             }
@@ -58,7 +54,7 @@ angular.module('app.services', ['lbServices', 'ngCookies'])
               LoopBackAuth.save();
               self.currentUser = response.data;
               var profile = self.currentUser && self.currentUser.profiles && self.currentUser.profiles.length && self.currentUser.profiles[0];
-              if(profile) {
+              if (profile) {
                 self.currentUser.name = profile.profile.name;
               }
               cb(self.currentUser);

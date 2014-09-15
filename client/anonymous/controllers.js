@@ -6,8 +6,8 @@ angular.module('app.controllers', ['app.services', 'ngCookies'])
 
   .controller('AppCtrl', function($window, $scope, $ionicModal, $timeout, AppAuth, $cookies) {
     AppAuth.ensureHasCurrentUser(function(user) {
-      console.log(user);
-      $scope.currentUser = user;
+      console.log(user && user.name);
+      $scope.currentUser = user || {email: 'guest'};
     });
 
     // Form data for the login modal
@@ -44,7 +44,7 @@ angular.module('app.controllers', ['app.services', 'ngCookies'])
     $scope.doLogin = function() {
       AppAuth.login($scope.loginData, function(user) {
         console.log(user);
-        $scope.currentUser = user;
+        $scope.currentUser = user  || {email: 'guest'};
         $scope.closeLogin();
       });
     };
