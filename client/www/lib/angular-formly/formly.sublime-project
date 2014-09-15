@@ -1,0 +1,28 @@
+{
+	"folders":
+	[
+		{
+			"name":"Formly",
+			"follow_symlinks": true,
+			"path": "./src/",
+			"folder_exclude_patterns": [
+				"bower_components"
+			]
+		},
+		{
+			"name": "Settings",
+			"follow_symlinks": true,
+			"path": ".",
+			"folder_exclude_patterns": [
+				"node_modules",
+				"src",
+				".grunt"
+			]
+		},
+		{
+			"name": "Bower",
+			"follow_symlinks": true,
+			"path": "src/bower_components",
+		}
+	]
+}

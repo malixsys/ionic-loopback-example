@@ -1,0 +1,36 @@
+{
+  "name": "zoof",
+  "version": "0.0.1",
+  "description": "aZOO.me",
+  "homepage": "https://github.com/malixsys/aZOOme",
+  "authors": [
+    "malixsys <github@malix.com>"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.24",
+    "angular-formly": "0.x",
+    "moment": "~2.7.0",
+    "angular-animate": ">=1.2.24",
+    "angular-touch": ">=1.2.24",
+    "angular-cookies": "~1.2.24",
+    "angular-sanitize": ">=1.2.24",
+    "ionic": "1.0.0-beta.12",
+    "angular-ui-router": "~0.2.10",
+    "angular-upload": "~1.0.11",
+    "angular-data": "~0.10.5",
+    "angular-resource": ">=1.2.24"
+  }
+}

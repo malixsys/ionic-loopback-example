@@ -1,0 +1,117 @@
+<div class="jumbotron">
+	<div class="container">
+		<h1>Formly for Angular</h1>
+		<p>JSON powered forms <br>
+		<a href="https://github.com/nimbly/angular-formly">https://github.com/nimbly/angular-formly</a></p>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-4 col-md-4 col-lg-4">
+			<!-- Pre configured options -->
+			<h3>Configured Default Options</h3>
+			<div hljs source="preConfiguredOptions|json"></div>
+
+			<span>
+				<!-- Formatted JSON -->
+				<button class="btn btn-success"
+				        ng-click="editJSON = true"
+				        ng-hide="editJSON">
+					Edit JSON
+				</button>
+				<button class="btn btn-success"
+				        ng-click="editJSON = false"
+				        ng-show="editJSON">
+					Pretty JSON
+				</button>
+
+				<button class="btn btn-success"
+				        ng-click="toggleCustomTypeTemplates()">
+					{{typeTemplatesButton}}
+				</button>
+
+				<h3>Options (Overrides configured default options)</h3>
+				<div class="form-group"
+				     ng-class="{'has-error': formOptionsError}"
+				     ng-show="editJSON">
+					<textarea class="form-control"
+					          ng-model="formOptionsStr"
+					          rows="5">
+					</textarea>
+				</div>
+				<div source="toPrettyJSON(formOptions, 4)"
+				     ng-hide="editJSON"
+				     hljs>
+				</div>
+
+				<h3>Fields</h3>
+				<div class="form-group"
+					 ng-class="{'has-error': formFieldsError}"
+				     ng-show="editJSON">
+					<textarea class="form-control"
+					          ng-model="formFieldsStr"
+					          rows="15">
+					</textarea>
+				</div>
+				<div source="toPrettyJSON(formFields, 4)"
+				     ng-hide="editJSON"
+				     hljs>
+				</div>
+			</span>
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-4">
+
+			<h3>Form</h3>
+			<formly-form name="myFormName"
+			             result="formData"
+			             fields="formFields"
+			             options="formOptions"
+			             ng-submit="onSubmit()">
+			</formly-form>
+			<br />
+			<br />
+			<formly-form name="hiddenFormlyForm"
+						 result="hiddenFormData"
+						 fields="hiddenFormFields"
+						 options="hiddenFormOptions">
+		</div>
+		<div class="col-sm-4 col-md-4 col-lg-4">
+
+			<h3>Submitted Data</h3>
+			<div hljs source="formData|json"></div>
+
+			<h3>Form State</h3>
+			<table class="table table-condensed">
+				<thead>
+				<tr>
+					<th>State</th>
+					<th>Value</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>$pristine</td>
+					<td>{{myFormName.$pristine}}</td>
+				</tr>
+				<tr>
+					<td>$dirty</td>
+					<td>{{myFormName.$dirty}}</td>
+				</tr>
+				<tr>
+					<td>$valid</td>
+					<td>{{myFormName.$valid}}</td>
+				</tr>
+				<tr>
+					<td>$invalid</td>
+					<td>{{myFormName.$invalid}}</td>
+				</tr>
+				<tr>
+					<td>$error</td>
+					<td>{{myFormName.$error}}</td>
+				</tr>
+				</tbody>
+
+			</table>
+		</div>
+	</div>
+</div>

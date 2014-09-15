@@ -1,0 +1,50 @@
+{
+  "name": "loopback-example-passport",
+  "version": "2.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "dependencies": {
+    "compression": "^1.0.11",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.3.2",
+    "errorhandler": "^1.1.1",
+    "express-session": "^1.7.6",
+    "gulp-nodemon": "^1.0.4",
+    "loopback": "^2.1.3",
+    "loopback-boot": "~2.0.0",
+    "loopback-component-passport": "^1.0.5",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3",
+    "passport-google-oauth": "~0.1.5",
+    "passport-oauth2": "^1.1.2",
+    "passport-twitter": "~1.0.2",
+    "serve-favicon": "^2.0.1"
+  },
+  "optionalDependencies": {
+    "loopback-explorer": "^1.2.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malixsys/zoof"
+  },
+  "devDependencies": {
+    "browserify": "^5.11.2",
+    "connect-livereload": "^0.4.0",
+    "gulp": "^3.8.8",
+    "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.4.0",
+    "gulp-livereload": "^2.1.1",
+    "gulp-load-plugins": "^0.6.0",
+    "gulp-loopback-sdk-angular": "^0.1.1",
+    "gulp-plumber": "^0.6.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-size": "^1.1.0",
+    "gulp-type": "^0.3.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-util": "^3.0.1",
+    "run-sequence": "^0.3.6",
+    "tiny-lr": "^0.1.4"
+  }
+}

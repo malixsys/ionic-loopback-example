@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Formly for Angular</title>
+
+		<!-- build:css css/style.css -->
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="bower_components/highlightjs/styles/default.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<!-- endbuild -->
+	</head>
+	<body ng-app="app">
+		<div class="loading"
+			 ng-show="isViewLoading">
+			 <div class="content">
+				Loading...
+			</div>
+		 </div>
+		
+		<div ui-view 
+			 class="view">
+		</div>
+
+		<div class="footer">
+			<div class="container">
+				Created by <a href="http://gonimbly.com">Nimbly</a><br>
+				We're hiring, come help us build amazing applications!<br>
+                <a href="https://github.com/nimbly/angular-formly">GitHub</a>
+			</div>
+		</div>
+
+		<script src="bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-highlightjs/angular-highlightjs.min.js"></script>
+		<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="bower_components/highlightjs/highlight.pack.js"></script>
+		<script src="app.js"></script>
+		<script src="views/home.js"></script>
+		<script src="views/custom-field.js"></script>
+		<script src="modules/formly.js"></script>
+		<script src="modules/formly-render.js"></script>
+		<script src="directives/formly-form.js"></script>
+		<script src="directives/formly-field.js"></script>
+		<script src="providers/formly-template.js"></script>
+		<script src="providers/formly-options.js"></script>
+	</body>
+</html>

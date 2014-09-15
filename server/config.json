@@ -1,0 +1,7 @@
+{
+  "restApiRoot": "/v1/api",
+  "host": "0.0.0.0",
+  "port": 5000,
+  "url": "http://localhost:5000/",
+  "cookieSecret": "F1FEE670-3C72-11E4-916C-0800200C9A66"
+}
