@@ -43,6 +43,6 @@
     "protractor": "~0.16.1",
     "grunt-express": "~1.2.1",
     "express": "~3.4.8",
-    "ejs": "~0.8.4"
+    "ejs": "2.x"
   }
 }
